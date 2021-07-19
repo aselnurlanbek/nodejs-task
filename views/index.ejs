@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .container {
+        max-width: 1200px;
+        margin: 0px auto;
+      }
+      .newsheader {
+        display: flex;
+        align-items: center;
+      }
+
+      .newsheader p {
+        margin-left: 20px;
+        color: #c0c5d3;
+      }
+
+      .newsheader h3 {
+        color: #7d9cfa;
+      }
+      .news-content {
+        width: 70%;
+      }
+
+      .news-content h2 {
+        margin: 0;
+        padding: 0;
+      }
+      .news {
+        margin-top: 10px;
+      }
+
+      .phrases {
+        width: 100%;
+        margin-top: 40px;
+      }
+      .phrase-list {
+        list-style: none;
+        columns: 2;
+        width: 60%;
+      }
+
+      .phrase-list li {
+        color: #5a76d1;
+        margin-top: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <% news.forEach(blog =>{ %>
+      <div class="news">
+        <div class="newsheader">
+          <h3>НАУКА И ТЕХНИКА</h3>
+          <p><%= blog.ptime %></p>
+        </div>
+        <div class="news-content">
+          <a><h2><%= blog.title %></h2></a>
+          <p><%= blog.description %></p>
+        </div>
+      </div>
+
+      <% }) %>
+      <div class="phrases">
+        <p>Вместе с "<b>привет</b>" часто ищут</p>
+        <ul class="phrase-list">
+          <% phrases.forEach(phrase =>{ %>
+          <a href="#"><li><%= phrase %></li></a>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
